@@ -1,6 +1,5 @@
 #!/bin/bash
 date_formatted=$(date +%m_%d%y-%H.%M.%S)
-#rm test
 touch test
 echo date_formatted > test
 git init
@@ -8,4 +7,4 @@ git add .
 git commit -m "fake commit"
 #git remote add nk https://github.com/NoahKittleson/bash-test.git
 git push nk master
-echo "It is currently: " $date_formatted
+echo "Fake commit pushed to git"
