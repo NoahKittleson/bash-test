@@ -1,12 +1,11 @@
 #!/bin/bash
-while sleep 60; do
-  date_formatted=$(date +%m_%d%y-%H.%M.%S)
+while sleep 30; do
   touch test
-  echo date_formatted > test
-  git init
-  git add .
-  git commit -m "fake commit"
+  echo $(date +%m_%d%y-%H.%M.%S) > test
+  git init > /dev/null
+  git add . > /dev/null
+  git commit -m "fake commit" > /dev/null
   #git remote add nk https://github.com/NoahKittleson/bash-test.git
-  git push nk master
-  echo "Fake commit pushed to git at" date_formatted
+  git push nk master > /dev/null
+  echo "Fake commit pushed to git at" $(date +%m_%d%y-%H.%M.%S)
 done
