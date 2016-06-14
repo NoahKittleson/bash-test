@@ -1,11 +1,11 @@
 #!/bin/bash
-while sleep 30; do
+while sleep 3600; do
   touch test
   echo $(date +%m_%d%y-%H.%M.%S) > test
-  git init > /dev/null
-  git add . > /dev/null
-  git commit -m "fake commit" > /dev/null
+  git init > /dev/null 2>&1
+  git add . > /dev/null 2>&1
+  git commit -m "fake commit" > /dev/null 2>&1
   #git remote add nk https://github.com/NoahKittleson/bash-test.git
-  git push nk master > /dev/null
+  git push nk master > /dev/null 2>&1
   echo "Fake commit pushed to git at" $(date +%m_%d%y-%H.%M.%S)
 done
