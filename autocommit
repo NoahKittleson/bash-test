@@ -1,0 +1,11 @@
+#!/bin/bash
+#first parameter is time between autocommits (minutes)
+#second parameter is github address
+
+while sleep $(($1 * 60)); do
+  git init > /dev/null 2>&1
+  git add . > /dev/null 2>&1
+  git commit -m "Auto commit at "$(date +%m_%d_%y-%H.%M.%S) > /dev/null 2>&1
+  git push $2 master > /dev/null 2>&1
+  echo "Auto commit at "$(date +%m_%d_%y-%H.%M.%S)
+done
